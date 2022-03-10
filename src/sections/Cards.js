@@ -6,10 +6,10 @@ import useData from "../hooks/useData"
 import { useSpringCarousel} from 'react-spring-carousel'
 import { useWindownDimension } from "../hooks/useWindowDimension"
 
-const CarouselItem = ({ wish, name, bg}) => {
-    return (<Stack justify={bg ? "end":"center" } h="100%" bg={bg ? `url(${bg}) #FAEAE9` : "#FAEAE9"} p={5} w="100%" m={5} borderRadius={10} bgSize="contain" spacing={0} bgRepeat="no-repeat">
-        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0}>{wish}</Text>
-        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} mt={bg ? "-1vh" : 0}>{name ? `- ${name}` : ''}</Text>
+const CarouselItem = ({ wish, name, bg }) => {
+    return (<Stack justify={bg ? "end":"center" } h="100%" bg={bg ? `url(${bg}) #FAEAE9` : "#FAEAE9"} p={5} w="100%" m={5} borderRadius={10} bgSize="contain" spacing={0} bgRepeat="no-repeat" bgPosition="center">
+        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} fontSize="lg">{wish}</Text>
+        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} mt={bg ? "-1vh" : 0} fontWeight="light">{name ? `- ${name}` : ''}</Text>
     </Stack>)
 }
 
@@ -31,7 +31,7 @@ const CardCarousel = ({items}) => {
     })
 
     return (
-      <Box h="50%" m={5} w="100%">
+      <Box h="50%" m={5} w="100%" fontFamily='Athiti'>
         {carouselFragment}
       </Box>
     );
@@ -61,9 +61,10 @@ export const Cards = () => {
                     </HStack>
                 </Flex>
 
-                <Flex w="100%" h="100vh" align="center" justify="center" pos="relative" pb={10}>
+                <Flex w="100%" h="100vh" align="center" justify="center" pos="relative" pb={10} mt="-3vh">
                    <CardCarousel items={data}/>
                 </Flex>
+                <Flex  w="100%" h="25vh" position="absolute" bottom="0" justify="center"><Text color="white" fontSize="xl" fontFamily='Athiti'>เลื่อนเลย --></Text></Flex>
             </ParallaxLayer>
         </Parallax>
     )
