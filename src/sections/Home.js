@@ -5,7 +5,7 @@ import { PetalParticles } from "../components/PetalParticles"
 
 export const Home = () => {
     return (
-        <Flex w="100vw" h="100vh" direction={["row", "column"]} justify="center" align={["flex-start", "flex-end"]}>
+        <Flex w="100vw" h="100vh" direction={["row", "column"]} justify="center" align={["flex-start", "flex-end"]} >
             <Flex position="absolute" zIndex="10" w="100%" top="0" justify={["center", "flex-start  "]} p={5} pt={['6vh', 5]}>
                 <Image src="icon.svg" boxSize="6vh" />
             </Flex>

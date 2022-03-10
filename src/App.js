@@ -8,6 +8,7 @@ import '@fontsource/parisienne'
 import '@fontsource/quattrocento-sans'
 
 import { Home } from './sections/Home';
+import { Cards } from './sections/Cards';
 
 function App() {
   const theme = extendTheme({
@@ -20,7 +21,8 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Home />
-    </ChakraProvider>
+      <Cards />
+    </ChakraProvider >
   );
 }
 
