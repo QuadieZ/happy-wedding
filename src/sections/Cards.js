@@ -8,8 +8,8 @@ import { useWindownDimension } from "../hooks/useWindowDimension"
 
 const CarouselItem = ({ wish, name, bg }) => {
     return (<Stack justify={bg ? "end":"center" } h="100%" bg={bg ? `url(${bg}) #FAEAE9` : "#FAEAE9"} p={5} w="100%" m={5} borderRadius={10} bgSize="contain" spacing={0} bgRepeat="no-repeat" bgPosition="center">
-        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} fontSize={["3xl","lg"]}>{wish}</Text>
-        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} mt={bg ? "-1vh" : 0} fontWeight="light" fontSize={["3xl","lg"]}>{name ? `- ${name}` : ''}</Text>
+        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} fontSize={["xl","lg"]}>{wish}</Text>
+        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} mt={bg ? "-1vh" : 0} fontWeight="light" fontSize={["xl","lg"]}>{name ? `- ${name}` : ''}</Text>
     </Stack>)
 }
 
