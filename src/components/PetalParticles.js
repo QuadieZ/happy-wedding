@@ -2,7 +2,7 @@ import Particles from "react-tsparticles"
 
 const particleConfig = {
     "fullScreen": {
-        "zIndex": 5
+        "zIndex": 12
     },
     "particles": {
         "move": {
