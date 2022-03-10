@@ -7,15 +7,17 @@ import { useSpringCarousel} from 'react-spring-carousel'
 import { useWindownDimension } from "../hooks/useWindowDimension"
 
 const CarouselItem = ({ wish, name, bg }) => {
-    return (<Stack justify={bg ? "end":"center" } h="100%" bg={bg ? `url(${bg}) #FAEAE9` : "#FAEAE9"} p={5} w="100%" m={5} borderRadius={10} bgSize="contain" spacing={0} bgRepeat="no-repeat" bgPosition="center">
-        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} fontSize={["xl","lg"]}>{wish}</Text>
+    return (<Stack justify={bg ? "end":"center" }  h="100%" bg={bg ? `url(${bg}) #FAEAE9` : "#FAEAE9"} p={5} w="100%" m={5} borderRadius={10} bgSize="contain" spacing={0} bgRepeat="no-repeat" bgPosition="center" position="relative">
+        <Box position={bg ? "absolute" : "relative"} bottom="0" w="100%" right="0">
+        <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} fontSize={["xl","lg"]} >{wish}</Text>
         <Text bgColor={bg ? "white" : "transparent"} p={bg ? 2 : 0} mt={bg ? "-1vh" : 0} fontWeight="light" fontSize={["xl","lg"]}>{name ? `- ${name}` : ''}</Text>
+        </Box>
     </Stack>)
 }
 
 const CardCarousel = ({items}) => {
     const { width } = useWindownDimension()
-    console.log(items)
+
     const carouselData = useMemo(() => {
         if (items) return (
             items?.map(item => ({
@@ -25,6 +27,7 @@ const CardCarousel = ({items}) => {
         )
         return [{}]
     },[items])
+
     const { carouselFragment } = useSpringCarousel({
         itemsPerSlide: items && width >= 750 ? 3 :1,
       items: carouselData
@@ -64,7 +67,7 @@ export const Cards = () => {
                 <Flex w="100%" h="100vh" align="center" justify="center" pos="relative" pb={10} mt="-3vh">
                    <CardCarousel items={data}/>
                 </Flex>
-                <Flex  w="100%" h="25vh" position="absolute" bottom="0" justify="center"><Text color="white" fontSize="xl" fontFamily='Athiti'>เลื่อนเลย --></Text></Flex>
+                <Flex  w="100%" h="25vh" position="absolute" bottom="0" justify="center"><Text color="white" fontSize="xl" fontFamily='Athiti'>เลื่อนเลย ☞</Text></Flex>
             </ParallaxLayer>
         </Parallax>
     )
